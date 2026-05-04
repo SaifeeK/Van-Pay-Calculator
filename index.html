@@ -115,6 +115,8 @@
   .btn.secondary:hover { border-color: var(--accent); color: var(--accent); box-shadow: none; transform: none; }
   .btn.download { background: var(--card); color: var(--accent3); border: 1px solid rgba(255,209,102,0.3); }
   .btn.download:hover { background: rgba(255,209,102,0.08); border-color: var(--accent3); box-shadow: 0 8px 24px rgba(255,209,102,0.15); transform: translateY(-2px); }
+  .btn.danger { background: var(--card); color: var(--accent2); border: 1px solid rgba(255,107,107,0.3); }
+  .btn.danger:hover { background: rgba(255,107,107,0.08); border-color: var(--accent2); box-shadow: none; transform: none; }
 
   .error-box {
     background: rgba(255,107,107,0.1);
@@ -129,6 +131,17 @@
     display: none;
   }
 
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    max-width: 960px;
+    margin: 0 auto 16px;
+  }
+
+  /* ── Results ── */
   #results { max-width: 960px; margin: 0 auto; }
 
   .date-banner {
@@ -147,16 +160,6 @@
   .date-banner .date-icon { font-size: 1.3rem; }
   .date-banner .date-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
   .date-banner .date-value { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    max-width: 960px;
-    margin: 0 auto 16px;
-  }
 
   .vehicle-card {
     background: var(--card);
@@ -190,7 +193,7 @@
     font-family: 'DM Mono', monospace;
   }
 
-  .vehicle-summary { display: flex; gap: 20px; flex-wrap: wrap; }
+  .vehicle-summary { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
   .summary-chip { text-align: right; }
   .summary-chip .label { font-size: 0.65rem; font-family: 'DM Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
   .summary-chip .value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
@@ -243,13 +246,190 @@
   .global-totals .chip { text-align: center; }
   .global-totals .chip .label { font-family: 'DM Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
   .global-totals .chip .val { font-size: 1.9rem; font-weight: 800; color: var(--accent); }
+
+  /* ── Excel copy box ── */
+  .excel-box {
+    background: var(--surface);
+    border: 1px solid rgba(255,209,102,0.2);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-top: 32px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .excel-box .excel-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent3);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .excel-table-wrap { overflow-x: auto; }
+
+  .excel-preview {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .excel-preview th {
+    background: #ffffff;
+    color: #000000;
+    padding: 8px 14px;
+    text-align: left;
+    border: 1px solid #cccccc;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  .excel-preview td {
+    padding: 8px 14px;
+    border: 1px solid #cccccc;
+    color: #000000;
+    background: #ffffff;
+  }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,209,102,0.1);
+    color: var(--accent3);
+    border: 1px solid rgba(255,209,102,0.3);
+    border-radius: 99px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .copy-btn:hover { background: rgba(255,209,102,0.2); transform: translateY(-1px); }
+  .copy-btn.copied { background: rgba(79,255,176,0.1); color: var(--accent); border-color: rgba(79,255,176,0.3); }
+
+  /* ── History ── */
+  #history-section {
+    max-width: 960px;
+    margin: 60px auto 0;
+  }
+
+  .history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .history-entry {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .history-entry-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .history-entry-header:hover { background: rgba(255,255,255,0.03); }
+
+  .history-date {
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+  }
+
+  .history-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .history-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .history-body { display: none; padding: 16px 20px; }
+  .history-body.open { display: block; }
+
+  .history-van-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .history-van-row:last-child { border-bottom: none; }
+
+  .history-van-id {
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+    min-width: 80px;
+  }
+
+  .history-van-nums {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .history-num { text-align: right; }
+  .history-num .hl { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; }
+  .history-num .hv { font-family: 'DM Mono', monospace; font-size: 0.9rem; font-weight: 600; }
+
+  .chevron { transition: transform 0.2s; font-size: 0.8rem; color: var(--muted); }
+  .chevron.open { transform: rotate(180deg); }
+
+  .empty-history {
+    text-align: center;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    padding: 40px;
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+  }
 </style>
 </head>
 <body>
 
 <header>
   <h1>Van Pay Calculator</h1>
-  <p>Copy your dispatch table → paste below → instant pay breakdown per vehicle</p>
+  <p>Paste dispatch data → get pay breakdown + copy to Excel</p>
 </header>
 
 <div class="input-area">
@@ -263,10 +443,6 @@ DCT442
 92.40
 55.44
 0.00
-0.00
-0.00
-0.00
-55.44
 ...paste the full table"></textarea>
 </div>
 
@@ -279,125 +455,132 @@ DCT442
 <div class="error-box" id="errorBox"></div>
 <div id="results"></div>
 
+<!-- History -->
+<div id="history-section">
+  <div class="history-header">
+    <div class="section-label" style="margin:0">📁 Saved History</div>
+    <button class="btn danger" id="clearHistoryBtn" style="padding:8px 18px;font-size:0.8rem">🗑 Clear All History</button>
+  </div>
+  <div id="historyList"></div>
+</div>
+
 <script>
-const pasteInput  = document.getElementById('pasteInput');
-const calcBtn     = document.getElementById('calcBtn');
-const downloadBtn = document.getElementById('downloadBtn');
-const resetBtn    = document.getElementById('resetBtn');
-const errorBox    = document.getElementById('errorBox');
-const resultsDiv  = document.getElementById('results');
-let lastDate = '';
+const pasteInput    = document.getElementById('pasteInput');
+const calcBtn       = document.getElementById('calcBtn');
+const downloadBtn   = document.getElementById('downloadBtn');
+const resetBtn      = document.getElementById('resetBtn');
+const errorBox      = document.getElementById('errorBox');
+const resultsDiv    = document.getElementById('results');
+const historyList   = document.getElementById('historyList');
+const clearHistBtn  = document.getElementById('clearHistoryBtn');
+
+let lastDate    = '';
+let lastGroups  = null;
+
+const STORAGE_KEY = 'vanpay_history';
+
+// ─── Storage ──────────────────────────────────────────────────────────────────
+function loadHistory() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
+  catch { return []; }
+}
+
+function saveHistory(h) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(h));
+}
 
 // ─── Parser ───────────────────────────────────────────────────────────────────
-// Each trip block is exactly 13 lines:
-//  0  changed-on datetime  e.g. "5/2/26 1:08 PM"
-//  1  res#                 e.g. "1952422"
-//  2  trip datetime        e.g. "5/2/26 9:41 AM"
-//  3  name
-//  4  serviceType          e.g. "VAN" or "Shared"
-//  5  vehicle ID           e.g. "DCT442"
-//  6  vehicle fare
-//  7  vehicle pay          ← used for 40% calc
-//  8  gratuity             ← added on top
-//  9  fuel
-// 10  offpeak
-// 11  extras
-// 12  total (ignored — we recalculate)
-
 function parseTrips(raw) {
-  const lines = raw.split('\n').map(l => l.trim()).filter(l => l !== '');
+  const lines  = raw.split('\n').map(l => l.trim()).filter(l => l !== '');
   const dateRx = /^\d{1,2}\/\d{1,2}\/\d{2,4}\s+\d{1,2}:\d{2}\s*(AM|PM)$/i;
   const numRx  = /^-?\d+(\.\d+)?$/;
   const trips  = [];
 
   let i = 0;
   while (i <= lines.length - 13) {
-    // Must start with a datetime line
     if (!dateRx.test(lines[i])) { i++; continue; }
 
-    const changedOn  = lines[i];
-    const res        = lines[i+1];
-    const tripDate   = lines[i+2];
-    const name       = lines[i+3];
-    const svcType    = lines[i+4];
-    const vehicle    = lines[i+5];
-    const vFare      = lines[i+6];
-    const vPayStr    = lines[i+7];
-    const gratStr    = lines[i+8];
-    // lines 9-11: fuel, offpeak, extras — ignored
-    // line 12: total — ignored
+    const changedOn = lines[i];
+    const res       = lines[i+1];
+    const tripDate  = lines[i+2];
+    const name      = lines[i+3];
+    const svcType   = lines[i+4];
+    const vehicle   = lines[i+5];
+    const vPayStr   = lines[i+7];
+    const gratStr   = lines[i+8];
 
-    // Validate: vehicle pay, gratuity must be numbers; vehicle should look like an ID
     if (!numRx.test(vPayStr) || !numRx.test(gratStr) || vehicle.length < 3) {
       i++; continue;
     }
 
-    trips.push({
-      changedOn,
-      res,
-      tripDate,
-      name,
-      svcType,
-      vehicle,
-      vPay:     parseFloat(vPayStr),
-      gratuity: parseFloat(gratStr),
-    });
+    trips.push({ changedOn, res, tripDate, name, svcType, vehicle,
+      vPay: parseFloat(vPayStr), gratuity: parseFloat(gratStr) });
     i += 13;
   }
   return trips;
 }
 
-// ─── Events ───────────────────────────────────────────────────────────────────
-resetBtn.addEventListener('click', () => {
-  pasteInput.value = '';
-  resultsDiv.innerHTML = '';
-  errorBox.style.display = 'none';
-  downloadBtn.style.display = 'none';
-  lastDate = '';
-});
-
-calcBtn.addEventListener('click', () => {
-  const raw = pasteInput.value.trim();
-  if (!raw) { showError('Please paste your dispatch data first.'); return; }
-
-  errorBox.style.display = 'none';
-  resultsDiv.innerHTML   = '';
-  downloadBtn.style.display = 'none';
-
-  const trips = parseTrips(raw);
-  if (!trips.length) {
-    showError('Could not find any trip data. Make sure you copied the full table — each trip should have 13 lines.');
-    return;
-  }
-
-  // Pull date from the first trip's tripDate field
-  lastDate = trips[0].tripDate.match(/^\d{1,2}\/\d{1,2}\/\d{2,4}/)?.[0] || '';
-  renderResults(trips, lastDate);
-});
-
 // ─── Helpers ──────────────────────────────────────────────────────────────────
+function fmt(n)  { return '$' + Number(n).toFixed(2); }
+function fmtN(n) { return Number(n).toFixed(2); }
+
 function showError(msg) {
   errorBox.textContent   = msg;
   errorBox.style.display = 'block';
 }
 
-function fmt(n) { return '$' + Number(n).toFixed(2); }
-
-// ─── Render ───────────────────────────────────────────────────────────────────
-function renderResults(trips, date) {
-  // Group by vehicle
+function groupTrips(trips) {
   const groups = {};
   for (const t of trips) {
     if (!groups[t.vehicle]) groups[t.vehicle] = [];
     groups[t.vehicle].push(t);
   }
+  return groups;
+}
+
+// ─── Excel copy ───────────────────────────────────────────────────────────────
+// Format: Date | Van | Rate (40%) | Tips (Gratuity)
+function buildExcelText(date, groups) {
+  const rows = [['Date', 'Van', 'Rate', 'Tips']];
+  for (const [vehicle, vTrips] of Object.entries(groups)) {
+    const totalVP   = vTrips.reduce((s,t) => s + t.vPay, 0);
+    const total40   = totalVP * 0.40;
+    const totalGrat = vTrips.reduce((s,t) => s + t.gratuity, 0);
+    rows.push([date, vehicle, fmtN(total40), fmtN(totalGrat)]);
+  }
+  return rows.map(r => r.join('\t')).join('\n');
+}
+
+function copyToClipboard(text, btn) {
+  // Force plain text only so Excel pastes with default black formatting (no colors)
+  try {
+    const item = new ClipboardItem({
+      'text/plain': new Blob([text], { type: 'text/plain' })
+    });
+    navigator.clipboard.write([item]).then(() => {
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '📋 Copy for Excel'; btn.classList.remove('copied'); }, 2000);
+    });
+  } catch(e) {
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '📋 Copy for Excel'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+}
+
+// ─── Render current results ───────────────────────────────────────────────────
+function renderResults(trips, date) {
+  const groups = groupTrips(trips);
+  lastGroups   = groups;
 
   const colors = ['#4fffb0', '#00c4ff', '#ffd166', '#ff6b6b', '#c77dff'];
   let html = '';
   let grandVP = 0, grand40 = 0, grandGrat = 0, grandTotal = 0;
   let ci = 0;
 
-  // Date banner
   if (date) {
     html += `<div class="date-banner">
       <span class="date-icon">📅</span>
@@ -411,11 +594,11 @@ function renderResults(trips, date) {
   html += `<div class="section-label">Results by Vehicle</div>`;
 
   for (const [vehicle, vTrips] of Object.entries(groups)) {
-    const color    = colors[ci++ % colors.length];
-    const totalVP  = vTrips.reduce((s, t) => s + t.vPay, 0);
-    const total40  = totalVP * 0.40;
-    const totalGrat= vTrips.reduce((s, t) => s + t.gratuity, 0);
-    const totalOut = total40 + totalGrat;
+    const color     = colors[ci++ % colors.length];
+    const totalVP   = vTrips.reduce((s,t) => s + t.vPay, 0);
+    const total40   = totalVP * 0.40;
+    const totalGrat = vTrips.reduce((s,t) => s + t.gratuity, 0);
+    const totalOut  = total40 + totalGrat;
 
     grandVP    += totalVP;
     grand40    += total40;
@@ -448,8 +631,7 @@ function renderResults(trips, date) {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Type</th>
+            <th>Name</th><th>Type</th>
             <th style="text-align:right">Vehicle Pay</th>
             <th style="text-align:right">40% Pay</th>
             <th style="text-align:right">Gratuity</th>
@@ -490,11 +672,176 @@ function renderResults(trips, date) {
     <div class="chip"><div class="label">Total 40% Pay</div><div class="val">${fmt(grand40)}</div></div>
     <div class="chip"><div class="label">Total Gratuity</div><div class="val" style="color:var(--accent3)">${fmt(grandGrat)}</div></div>
     <div class="chip"><div class="label">Total Payout</div><div class="val" style="font-size:2.2rem">${fmt(grandTotal)}</div></div>
+  </div>
+
+  <!-- Excel copy section -->
+  <div class="excel-box">
+    <div class="excel-title">
+      <span>📊 Copy to Excel — one row per van</span>
+      <button class="copy-btn" id="excelCopyBtn">📋 Copy for Excel</button>
+    </div>
+    <div class="excel-table-wrap">
+      <table class="excel-preview">
+        <thead>
+          <tr><th>Date</th><th>Van</th><th>Rate (40%)</th><th>Tips (Gratuity)</th></tr>
+        </thead>
+        <tbody>
+          ${Object.entries(groups).map(([vehicle, vTrips]) => {
+            const vp   = vTrips.reduce((s,t) => s + t.vPay, 0);
+            const p40  = vp * 0.40;
+            const grat = vTrips.reduce((s,t) => s + t.gratuity, 0);
+            return `<tr>
+              <td>${date}</td>
+              <td>${vehicle}</td>
+              <td>${fmtN(p40)}</td>
+              <td>${fmtN(grat)}</td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+    </div>
+    <div style="font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--muted);margin-top:8px">
+      Click copy, then paste directly into your Excel spreadsheet (Ctrl+V)
+    </div>
   </div>`;
 
   resultsDiv.innerHTML = html;
   downloadBtn.style.display = 'inline-flex';
+
+  // Wire up copy button
+  document.getElementById('excelCopyBtn').addEventListener('click', function() {
+    copyToClipboard(buildExcelText(date, groups), this);
+  });
 }
+
+// ─── History rendering ────────────────────────────────────────────────────────
+function renderHistory() {
+  const history = loadHistory();
+  if (!history.length) {
+    historyList.innerHTML = `<div class="empty-history">No saved calculations yet — run a calculation to save it here.</div>`;
+    return;
+  }
+
+  historyList.innerHTML = history.slice().reverse().map((entry, idx) => {
+    const realIdx = history.length - 1 - idx;
+    const vanRows = Object.entries(entry.groups).map(([vehicle, data]) => `
+      <div class="history-van-row">
+        <div class="history-van-id" style="color:${data.color}">${vehicle}</div>
+        <div class="history-van-nums">
+          <div class="history-num"><div class="hl">Vehicle Pay</div><div class="hv">${fmt(data.totalVP)}</div></div>
+          <div class="history-num"><div class="hl">40% Pay</div><div class="hv" style="color:${data.color}">${fmt(data.total40)}</div></div>
+          <div class="history-num"><div class="hl">Gratuity</div><div class="hv" style="color:var(--accent3)">${fmt(data.totalGrat)}</div></div>
+          <div class="history-num"><div class="hl">Payout</div><div class="hv" style="color:${data.color}">${fmt(data.totalOut)}</div></div>
+        </div>
+      </div>`).join('');
+
+    return `
+    <div class="history-entry">
+      <div class="history-entry-header" onclick="toggleHistory(this)">
+        <div>
+          <div class="history-date">📅 ${entry.date}</div>
+          <div class="history-meta">${Object.keys(entry.groups).length} van(s) · saved ${entry.savedAt}</div>
+        </div>
+        <div class="history-actions">
+          <button class="copy-btn" onclick="event.stopPropagation();copyHistoryEntry(${realIdx},this)">📋 Copy for Excel</button>
+          <button class="btn danger" style="padding:6px 14px;font-size:0.75rem" onclick="event.stopPropagation();deleteHistoryEntry(${realIdx})">✕</button>
+          <span class="chevron">▼</span>
+        </div>
+      </div>
+      <div class="history-body">${vanRows}</div>
+    </div>`;
+  }).join('');
+}
+
+function toggleHistory(header) {
+  const body    = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  body.classList.toggle('open');
+  chevron.classList.toggle('open');
+}
+
+function copyHistoryEntry(idx, btn) {
+  const history = loadHistory();
+  const entry   = history[idx];
+  // Rebuild groups in text form for Excel
+  const rows = [['Date', 'Van', 'Rate', 'Tips']];
+  for (const [vehicle, data] of Object.entries(entry.groups)) {
+    rows.push([entry.date, vehicle, fmtN(data.total40), fmtN(data.totalGrat)]);
+  }
+  const text = rows.map(r => r.join('\t')).join('\n');
+  copyToClipboard(text, btn);
+}
+
+function deleteHistoryEntry(idx) {
+  const history = loadHistory();
+  history.splice(idx, 1);
+  saveHistory(history);
+  renderHistory();
+}
+
+clearHistBtn.addEventListener('click', () => {
+  if (confirm('Clear all saved history?')) {
+    saveHistory([]);
+    renderHistory();
+  }
+});
+
+// ─── Save to history ──────────────────────────────────────────────────────────
+function saveToHistory(date, groups) {
+  const history = loadHistory();
+  const colors  = ['#4fffb0', '#00c4ff', '#ffd166', '#ff6b6b', '#c77dff'];
+  let ci = 0;
+
+  const groupData = {};
+  for (const [vehicle, vTrips] of Object.entries(groups)) {
+    const totalVP   = vTrips.reduce((s,t) => s + t.vPay, 0);
+    const total40   = totalVP * 0.40;
+    const totalGrat = vTrips.reduce((s,t) => s + t.gratuity, 0);
+    const totalOut  = total40 + totalGrat;
+    groupData[vehicle] = { totalVP, total40, totalGrat, totalOut, color: colors[ci++ % colors.length] };
+  }
+
+  // Replace if same date exists
+  const existing = history.findIndex(h => h.date === date);
+  const entry = {
+    date,
+    groups: groupData,
+    savedAt: new Date().toLocaleString()
+  };
+  if (existing >= 0) history[existing] = entry;
+  else history.push(entry);
+
+  saveHistory(history);
+  renderHistory();
+}
+
+// ─── Main events ──────────────────────────────────────────────────────────────
+resetBtn.addEventListener('click', () => {
+  pasteInput.value = '';
+  resultsDiv.innerHTML = '';
+  errorBox.style.display = 'none';
+  downloadBtn.style.display = 'none';
+  lastDate = ''; lastGroups = null;
+});
+
+calcBtn.addEventListener('click', () => {
+  const raw = pasteInput.value.trim();
+  if (!raw) { showError('Please paste your dispatch data first.'); return; }
+
+  errorBox.style.display = 'none';
+  resultsDiv.innerHTML   = '';
+  downloadBtn.style.display = 'none';
+
+  const trips = parseTrips(raw);
+  if (!trips.length) {
+    showError('Could not find any trip data. Make sure you copied the full table.');
+    return;
+  }
+
+  lastDate = trips[0].tripDate.match(/^\d{1,2}\/\d{1,2}\/\d{2,4}/)?.[0] || '';
+  renderResults(trips, lastDate);
+  saveToHistory(lastDate, groupTrips(trips));
+});
 
 // ─── Download ─────────────────────────────────────────────────────────────────
 downloadBtn.addEventListener('click', () => {
@@ -532,6 +879,7 @@ tfoot td:first-child{text-align:left;color:#6b7599;text-transform:uppercase;font
 .global-totals .chip .val{font-size:1.9rem;font-weight:800;color:#4fffb0;}
 h1{text-align:center;font-size:2rem;font-weight:800;background:linear-gradient(135deg,#4fffb0,#00c4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
 .subtitle{text-align:center;color:#6b7599;font-family:'DM Mono',monospace;font-size:0.8rem;margin-bottom:40px;}
+.excel-box{display:none;}
 </style></head><body>
 <h1>Van Pay Report</h1>
 <p class="subtitle">Generated ${new Date().toLocaleString()}</p>
@@ -541,11 +889,13 @@ ${content}
   const blob = new Blob([html], { type: 'text/html' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
-  a.href     = url;
-  a.download = `van-pay-${dateSlug}.html`;
-  a.click();
+  a.href = url; a.download = `van-pay-${dateSlug}.html`; a.click();
   URL.revokeObjectURL(url);
 });
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+renderHistory();
 </script>
 </body>
 </html>
+
