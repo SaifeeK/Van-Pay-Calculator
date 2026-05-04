@@ -29,10 +29,7 @@
     padding: 40px 20px;
   }
 
-  header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
+  header { text-align: center; margin-bottom: 40px; }
 
   header h1 {
     font-size: 2.8rem;
@@ -44,17 +41,9 @@
     background-clip: text;
   }
 
-  header p {
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.85rem;
-    margin-top: 8px;
-  }
+  header p { color: var(--muted); font-family: 'DM Mono', monospace; font-size: 0.85rem; margin-top: 8px; }
 
-  .input-area {
-    max-width: 720px;
-    margin: 0 auto 20px;
-  }
+  .input-area { max-width: 720px; margin: 0 auto 20px; }
 
   .input-label {
     font-family: 'DM Mono', monospace;
@@ -81,7 +70,6 @@
     transition: border-color 0.2s ease;
     line-height: 1.7;
   }
-
   textarea:focus { border-color: var(--accent); }
   textarea::placeholder { color: var(--muted); opacity: 0.5; }
 
@@ -109,7 +97,6 @@
     cursor: pointer;
     transition: all 0.2s ease;
   }
-
   .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,255,176,0.3); }
   .btn.secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
   .btn.secondary:hover { border-color: var(--accent); color: var(--accent); box-shadow: none; transform: none; }
@@ -141,7 +128,6 @@
     margin: 0 auto 16px;
   }
 
-  /* ── Results ── */
   #results { max-width: 960px; margin: 0 auto; }
 
   .date-banner {
@@ -156,7 +142,6 @@
     align-items: center;
     gap: 12px;
   }
-
   .date-banner .date-icon { font-size: 1.3rem; }
   .date-banner .date-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
   .date-banner .date-value { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
@@ -169,11 +154,7 @@
     overflow: hidden;
     animation: fadeUp 0.4s ease both;
   }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
 
   .vehicle-header {
     display: flex;
@@ -186,32 +167,14 @@
     gap: 12px;
   }
 
-  .vehicle-name {
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    font-family: 'DM Mono', monospace;
-  }
-
+  .vehicle-name { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; font-family: 'DM Mono', monospace; }
   .vehicle-summary { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
   .summary-chip { text-align: right; }
   .summary-chip .label { font-size: 0.65rem; font-family: 'DM Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
   .summary-chip .value { font-size: 1.1rem; font-weight: 700; color: var(--text); }
 
   table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-
-  thead th {
-    padding: 10px 16px;
-    text-align: left;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    background: rgba(255,255,255,0.02);
-    border-bottom: 1px solid var(--border);
-  }
-
+  thead th { padding: 10px 16px; text-align: left; font-family: 'DM Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border); }
   tbody tr { border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.15s; }
   tbody tr:hover { background: rgba(255,255,255,0.03); }
   tbody tr:last-child { border-bottom: none; }
@@ -221,14 +184,7 @@
   tbody td.green { color: var(--accent); font-weight: 500; }
   tbody td.yellow { color: var(--accent3); font-weight: 600; }
 
-  tfoot td {
-    padding: 12px 16px;
-    font-family: 'DM Mono', monospace;
-    font-weight: 600;
-    background: rgba(79,255,176,0.05);
-    border-top: 1px solid var(--border);
-    text-align: right;
-  }
+  tfoot td { padding: 12px 16px; font-family: 'DM Mono', monospace; font-weight: 600; background: rgba(79,255,176,0.05); border-top: 1px solid var(--border); text-align: right; }
   tfoot td:first-child { text-align: left; color: var(--muted); text-transform: uppercase; font-size: 0.7rem; font-weight: 400; }
 
   .global-totals {
@@ -242,12 +198,11 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .global-totals .chip { text-align: center; }
   .global-totals .chip .label { font-family: 'DM Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; }
   .global-totals .chip .val { font-size: 1.9rem; font-weight: 800; color: var(--accent); }
 
-  /* ── Excel copy box ── */
+  /* Excel box */
   .excel-box {
     background: var(--surface);
     border: 1px solid rgba(255,209,102,0.2);
@@ -258,7 +213,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   .excel-box .excel-title {
     font-family: 'DM Mono', monospace;
     font-size: 0.7rem;
@@ -272,9 +226,7 @@
     flex-wrap: wrap;
     gap: 8px;
   }
-
   .excel-table-wrap { overflow-x: auto; }
-
   .excel-preview {
     width: 100%;
     border-collapse: collapse;
@@ -284,23 +236,8 @@
     background: #ffffff;
     color: #000000;
   }
-
-  .excel-preview th {
-    background: #ffffff;
-    color: #000000;
-    padding: 8px 14px;
-    text-align: left;
-    border: 1px solid #cccccc;
-    font-size: 0.8rem;
-    font-weight: bold;
-  }
-
-  .excel-preview td {
-    padding: 8px 14px;
-    border: 1px solid #cccccc;
-    color: #000000;
-    background: #ffffff;
-  }
+  .excel-preview th { background: #ffffff; color: #000000; padding: 8px 14px; text-align: left; border: 1px solid #cccccc; font-size: 0.8rem; font-weight: bold; }
+  .excel-preview td { padding: 8px 14px; border: 1px solid #cccccc; color: #000000; background: #ffffff; }
 
   .copy-btn {
     display: inline-flex;
@@ -317,33 +254,63 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-
   .copy-btn:hover { background: rgba(255,209,102,0.2); transform: translateY(-1px); }
   .copy-btn.copied { background: rgba(79,255,176,0.1); color: var(--accent); border-color: rgba(79,255,176,0.3); }
 
-  /* ── History ── */
-  #history-section {
+  /* ── Dual History Section ── */
+  .history-wrapper {
     max-width: 960px;
     margin: 60px auto 0;
   }
 
-  .history-header {
+  .history-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
     gap: 8px;
   }
 
+  /* Tab bar */
+  .tab-bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+
+  .tab {
+    padding: 10px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* Tab panels */
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* By-date history (existing) */
   .history-entry {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     overflow: hidden;
   }
-
   .history-entry-header {
     display: flex;
     align-items: center;
@@ -356,64 +323,100 @@
     flex-wrap: wrap;
     gap: 8px;
   }
-
   .history-entry-header:hover { background: rgba(255,255,255,0.03); }
-
-  .history-date {
-    font-family: 'DM Mono', monospace;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--accent);
-  }
-
-  .history-meta {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-
-  .history-actions {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
+  .history-date { font-family: 'DM Mono', monospace; font-weight: 700; font-size: 1rem; color: var(--accent); }
+  .history-meta { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--muted); }
+  .history-actions { display: flex; gap: 8px; align-items: center; }
   .history-body { display: none; padding: 16px 20px; }
   .history-body.open { display: block; }
-
-  .history-van-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
+  .history-van-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 8px; }
   .history-van-row:last-child { border-bottom: none; }
-
-  .history-van-id {
-    font-family: 'DM Mono', monospace;
-    font-weight: 700;
-    font-size: 0.95rem;
-    min-width: 80px;
-  }
-
-  .history-van-nums {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-
+  .history-van-id { font-family: 'DM Mono', monospace; font-weight: 700; font-size: 0.95rem; min-width: 80px; }
+  .history-van-nums { display: flex; gap: 24px; flex-wrap: wrap; }
   .history-num { text-align: right; }
   .history-num .hl { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; }
   .history-num .hv { font-family: 'DM Mono', monospace; font-size: 0.9rem; font-weight: 600; }
-
   .chevron { transition: transform 0.2s; font-size: 0.8rem; color: var(--muted); }
   .chevron.open { transform: rotate(180deg); }
 
-  .empty-history {
+  /* Per-van ledger */
+  .van-ledger-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .van-ledger-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .van-ledger-header {
+    padding: 16px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .van-ledger-id {
+    font-family: 'DM Mono', monospace;
+    font-weight: 800;
+    font-size: 1.2rem;
+  }
+
+  .van-ledger-total {
+    text-align: right;
+  }
+  .van-ledger-total .tl { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; }
+  .van-ledger-total .tv { font-family: 'DM Mono', monospace; font-size: 1rem; font-weight: 700; }
+
+  .van-ledger-body { padding: 0; }
+
+  .van-ledger-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background 0.15s;
+  }
+  .van-ledger-row:last-child { border-bottom: none; }
+  .van-ledger-row:hover { background: rgba(255,255,255,0.03); }
+
+  .van-ledger-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .van-ledger-nums {
+    display: flex;
+    gap: 16px;
+    text-align: right;
+  }
+
+  .van-ledger-num { text-align: right; }
+  .van-ledger-num .nl { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--muted); text-transform: uppercase; }
+  .van-ledger-num .nv { font-family: 'DM Mono', monospace; font-size: 0.85rem; font-weight: 600; }
+
+  .van-ledger-summary {
+    padding: 12px 20px;
+    background: rgba(79,255,176,0.04);
+    border-top: 2px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .van-ledger-summary .sl { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; }
+  .van-ledger-summary .sv { font-family: 'DM Mono', monospace; font-size: 0.95rem; font-weight: 700; }
+
+  .empty-state {
     text-align: center;
     color: var(--muted);
     font-family: 'DM Mono', monospace;
@@ -429,7 +432,7 @@
 
 <header>
   <h1>Van Pay Calculator</h1>
-  <p>Paste dispatch data → get pay breakdown + copy to Excel</p>
+  <p>Paste dispatch data → instant pay breakdown + per-van ledger</p>
 </header>
 
 <div class="input-area">
@@ -455,212 +458,158 @@ DCT442
 <div class="error-box" id="errorBox"></div>
 <div id="results"></div>
 
-<!-- History -->
-<div id="history-section">
-  <div class="history-header">
-    <div class="section-label" style="margin:0">📁 Saved History</div>
+<!-- History Section -->
+<div class="history-wrapper">
+  <div class="history-top">
+    <div class="section-label" style="margin:0">📁 History</div>
     <button class="btn danger" id="clearHistoryBtn" style="padding:8px 18px;font-size:0.8rem">🗑 Clear All History</button>
   </div>
-  <div id="historyList"></div>
+
+  <div class="tab-bar" id="tabBar">
+    <div class="tab active" data-tab="by-date">By Date</div>
+    <!-- Van tabs added dynamically -->
+  </div>
+
+  <div class="tab-panel active" id="panel-by-date">
+    <div id="historyList"></div>
+  </div>
+
+  <!-- Van panels added dynamically -->
+  <div id="vanPanels"></div>
 </div>
 
 <script>
-const pasteInput    = document.getElementById('pasteInput');
-const calcBtn       = document.getElementById('calcBtn');
-const downloadBtn   = document.getElementById('downloadBtn');
-const resetBtn      = document.getElementById('resetBtn');
-const errorBox      = document.getElementById('errorBox');
-const resultsDiv    = document.getElementById('results');
-const historyList   = document.getElementById('historyList');
-const clearHistBtn  = document.getElementById('clearHistoryBtn');
+const pasteInput   = document.getElementById('pasteInput');
+const calcBtn      = document.getElementById('calcBtn');
+const downloadBtn  = document.getElementById('downloadBtn');
+const resetBtn     = document.getElementById('resetBtn');
+const errorBox     = document.getElementById('errorBox');
+const resultsDiv   = document.getElementById('results');
+const historyList  = document.getElementById('historyList');
+const clearHistBtn = document.getElementById('clearHistoryBtn');
+const tabBar       = document.getElementById('tabBar');
+const vanPanels    = document.getElementById('vanPanels');
 
-let lastDate    = '';
-let lastGroups  = null;
-
+let lastDate = '';
 const STORAGE_KEY = 'vanpay_history';
+const COLORS = ['#4fffb0', '#00c4ff', '#ffd166', '#ff6b6b', '#c77dff'];
 
-// ─── Storage ──────────────────────────────────────────────────────────────────
+// ── Storage ──────────────────────────────────────────────────────────────────
 function loadHistory() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); }
   catch { return []; }
 }
+function saveHistory(h) { localStorage.setItem(STORAGE_KEY, JSON.stringify(h)); }
 
-function saveHistory(h) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(h));
-}
-
-// ─── Parser ───────────────────────────────────────────────────────────────────
+// ── Parser ───────────────────────────────────────────────────────────────────
 function parseTrips(raw) {
   const lines  = raw.split('\n').map(l => l.trim()).filter(l => l !== '');
   const dateRx = /^\d{1,2}\/\d{1,2}\/\d{2,4}\s+\d{1,2}:\d{2}\s*(AM|PM)$/i;
   const numRx  = /^-?\d+(\.\d+)?$/;
   const trips  = [];
-
   let i = 0;
   while (i <= lines.length - 13) {
     if (!dateRx.test(lines[i])) { i++; continue; }
-
-    const changedOn = lines[i];
-    const res       = lines[i+1];
-    const tripDate  = lines[i+2];
-    const name      = lines[i+3];
-    const svcType   = lines[i+4];
-    const vehicle   = lines[i+5];
-    const vPayStr   = lines[i+7];
-    const gratStr   = lines[i+8];
-
-    if (!numRx.test(vPayStr) || !numRx.test(gratStr) || vehicle.length < 3) {
-      i++; continue;
-    }
-
-    trips.push({ changedOn, res, tripDate, name, svcType, vehicle,
-      vPay: parseFloat(vPayStr), gratuity: parseFloat(gratStr) });
+    const vPayStr = lines[i+7];
+    const gratStr = lines[i+8];
+    const vehicle = lines[i+5];
+    if (!numRx.test(vPayStr) || !numRx.test(gratStr) || vehicle.length < 3) { i++; continue; }
+    trips.push({
+      changedOn: lines[i], res: lines[i+1], tripDate: lines[i+2],
+      name: lines[i+3], svcType: lines[i+4], vehicle,
+      vPay: parseFloat(vPayStr), gratuity: parseFloat(gratStr)
+    });
     i += 13;
   }
   return trips;
 }
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+function groupTrips(trips) {
+  const g = {};
+  for (const t of trips) {
+    if (!g[t.vehicle]) g[t.vehicle] = [];
+    g[t.vehicle].push(t);
+  }
+  return g;
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
 function fmt(n)  { return '$' + Number(n).toFixed(2); }
 function fmtN(n) { return Number(n).toFixed(2); }
+function showError(msg) { errorBox.textContent = msg; errorBox.style.display = 'block'; }
 
-function showError(msg) {
-  errorBox.textContent   = msg;
-  errorBox.style.display = 'block';
+function vanColor(vehicle) {
+  // Consistent color per van name
+  const allVans = [...new Set(loadHistory().flatMap(e => Object.keys(e.groups)))].sort();
+  const idx = allVans.indexOf(vehicle);
+  return COLORS[idx >= 0 ? idx % COLORS.length : 0];
 }
 
-function groupTrips(trips) {
-  const groups = {};
-  for (const t of trips) {
-    if (!groups[t.vehicle]) groups[t.vehicle] = [];
-    groups[t.vehicle].push(t);
+// ── Copy to clipboard (plain text only) ──────────────────────────────────────
+function copyToClipboard(text, btn) {
+  try {
+    const item = new ClipboardItem({ 'text/plain': new Blob([text], { type: 'text/plain' }) });
+    navigator.clipboard.write([item]).then(() => flashCopied(btn));
+  } catch(e) {
+    navigator.clipboard.writeText(text).then(() => flashCopied(btn));
   }
-  return groups;
+}
+function flashCopied(btn) {
+  const orig = btn.textContent;
+  btn.textContent = '✓ Copied!';
+  btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
 }
 
-// ─── Excel copy ───────────────────────────────────────────────────────────────
-// Format: Date | Van | Rate (40%) | Tips (Gratuity)
 function buildExcelText(date, groups) {
   const rows = [['Date', 'Van', 'Rate', 'Tips']];
   for (const [vehicle, vTrips] of Object.entries(groups)) {
-    const totalVP   = vTrips.reduce((s,t) => s + t.vPay, 0);
-    const total40   = totalVP * 0.40;
-    const totalGrat = vTrips.reduce((s,t) => s + t.gratuity, 0);
-    rows.push([date, vehicle, fmtN(total40), fmtN(totalGrat)]);
+    const vp   = vTrips.reduce((s,t) => s + t.vPay, 0);
+    const p40  = vp * 0.40;
+    const grat = vTrips.reduce((s,t) => s + t.gratuity, 0);
+    rows.push([date, vehicle, fmtN(p40), fmtN(grat)]);
   }
   return rows.map(r => r.join('\t')).join('\n');
 }
 
-function copyToClipboard(text, btn) {
-  // Force plain text only so Excel pastes with default black formatting (no colors)
-  try {
-    const item = new ClipboardItem({
-      'text/plain': new Blob([text], { type: 'text/plain' })
-    });
-    navigator.clipboard.write([item]).then(() => {
-      btn.textContent = '✓ Copied!';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = '📋 Copy for Excel'; btn.classList.remove('copied'); }, 2000);
-    });
-  } catch(e) {
-    navigator.clipboard.writeText(text).then(() => {
-      btn.textContent = '✓ Copied!';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = '📋 Copy for Excel'; btn.classList.remove('copied'); }, 2000);
-    });
-  }
-}
-
-// ─── Render current results ───────────────────────────────────────────────────
+// ── Render Results ───────────────────────────────────────────────────────────
 function renderResults(trips, date) {
   const groups = groupTrips(trips);
-  lastGroups   = groups;
-
-  const colors = ['#4fffb0', '#00c4ff', '#ffd166', '#ff6b6b', '#c77dff'];
-  let html = '';
-  let grandVP = 0, grand40 = 0, grandGrat = 0, grandTotal = 0;
-  let ci = 0;
+  let html = '', grandVP = 0, grand40 = 0, grandGrat = 0, grandTotal = 0, ci = 0;
 
   if (date) {
-    html += `<div class="date-banner">
-      <span class="date-icon">📅</span>
-      <div>
-        <div class="date-label">Report Date</div>
-        <div class="date-value">${date}</div>
-      </div>
-    </div>`;
+    html += `<div class="date-banner"><span class="date-icon">📅</span><div><div class="date-label">Report Date</div><div class="date-value">${date}</div></div></div>`;
   }
-
   html += `<div class="section-label">Results by Vehicle</div>`;
 
   for (const [vehicle, vTrips] of Object.entries(groups)) {
-    const color     = colors[ci++ % colors.length];
-    const totalVP   = vTrips.reduce((s,t) => s + t.vPay, 0);
-    const total40   = totalVP * 0.40;
-    const totalGrat = vTrips.reduce((s,t) => s + t.gratuity, 0);
-    const totalOut  = total40 + totalGrat;
-
-    grandVP    += totalVP;
-    grand40    += total40;
-    grandGrat  += totalGrat;
-    grandTotal += totalOut;
+    const color    = COLORS[ci++ % COLORS.length];
+    const totalVP  = vTrips.reduce((s,t) => s + t.vPay, 0);
+    const total40  = totalVP * 0.40;
+    const totalGrat= vTrips.reduce((s,t) => s + t.gratuity, 0);
+    const totalOut = total40 + totalGrat;
+    grandVP += totalVP; grand40 += total40; grandGrat += totalGrat; grandTotal += totalOut;
 
     html += `
     <div class="vehicle-card" style="animation-delay:${(ci-1)*0.08}s">
       <div class="vehicle-header">
         <div class="vehicle-name" style="color:${color}">${vehicle}</div>
         <div class="vehicle-summary">
-          <div class="summary-chip">
-            <div class="label">Vehicle Pay</div>
-            <div class="value">${fmt(totalVP)}</div>
-          </div>
-          <div class="summary-chip">
-            <div class="label">40% Driver Pay</div>
-            <div class="value" style="color:${color}">${fmt(total40)}</div>
-          </div>
-          <div class="summary-chip">
-            <div class="label">Gratuity</div>
-            <div class="value" style="color:var(--accent3)">${fmt(totalGrat)}</div>
-          </div>
-          <div class="summary-chip">
-            <div class="label">Total Payout</div>
-            <div class="value" style="color:${color};font-size:1.3rem">${fmt(totalOut)}</div>
-          </div>
+          <div class="summary-chip"><div class="label">Vehicle Pay</div><div class="value">${fmt(totalVP)}</div></div>
+          <div class="summary-chip"><div class="label">40% Driver Pay</div><div class="value" style="color:${color}">${fmt(total40)}</div></div>
+          <div class="summary-chip"><div class="label">Gratuity</div><div class="value" style="color:var(--accent3)">${fmt(totalGrat)}</div></div>
+          <div class="summary-chip"><div class="label">Total Payout</div><div class="value" style="color:${color};font-size:1.3rem">${fmt(totalOut)}</div></div>
         </div>
       </div>
       <table>
-        <thead>
-          <tr>
-            <th>Name</th><th>Type</th>
-            <th style="text-align:right">Vehicle Pay</th>
-            <th style="text-align:right">40% Pay</th>
-            <th style="text-align:right">Gratuity</th>
-            <th style="text-align:right">Payout</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Name</th><th>Type</th><th style="text-align:right">Vehicle Pay</th><th style="text-align:right">40% Pay</th><th style="text-align:right">Gratuity</th><th style="text-align:right">Payout</th></tr></thead>
         <tbody>
           ${vTrips.map(t => {
-            const pay40  = t.vPay * 0.4;
-            const payout = pay40 + t.gratuity;
-            return `<tr>
-              <td class="name">${t.name}</td>
-              <td>${t.svcType}</td>
-              <td class="money">${fmt(t.vPay)}</td>
-              <td class="money green">${fmt(pay40)}</td>
-              <td class="money yellow">${fmt(t.gratuity)}</td>
-              <td class="money" style="color:${color};font-weight:700">${fmt(payout)}</td>
-            </tr>`;
+            const pay40 = t.vPay * 0.4, payout = pay40 + t.gratuity;
+            return `<tr><td class="name">${t.name}</td><td>${t.svcType}</td><td class="money">${fmt(t.vPay)}</td><td class="money green">${fmt(pay40)}</td><td class="money yellow">${fmt(t.gratuity)}</td><td class="money" style="color:${color};font-weight:700">${fmt(payout)}</td></tr>`;
           }).join('')}
         </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="2">Totals</td>
-            <td>${fmt(totalVP)}</td>
-            <td style="color:${color}">${fmt(total40)}</td>
-            <td style="color:var(--accent3)">${fmt(totalGrat)}</td>
-            <td style="color:${color}">${fmt(totalOut)}</td>
-          </tr>
-        </tfoot>
+        <tfoot><tr><td colspan="2">Totals</td><td>${fmt(totalVP)}</td><td style="color:${color}">${fmt(total40)}</td><td style="color:var(--accent3)">${fmt(totalGrat)}</td><td style="color:${color}">${fmt(totalOut)}</td></tr></tfoot>
       </table>
     </div>`;
   }
@@ -673,8 +622,6 @@ function renderResults(trips, date) {
     <div class="chip"><div class="label">Total Gratuity</div><div class="val" style="color:var(--accent3)">${fmt(grandGrat)}</div></div>
     <div class="chip"><div class="label">Total Payout</div><div class="val" style="font-size:2.2rem">${fmt(grandTotal)}</div></div>
   </div>
-
-  <!-- Excel copy section -->
   <div class="excel-box">
     <div class="excel-title">
       <span>📊 Copy to Excel — one row per van</span>
@@ -682,46 +629,36 @@ function renderResults(trips, date) {
     </div>
     <div class="excel-table-wrap">
       <table class="excel-preview">
-        <thead>
-          <tr><th>Date</th><th>Van</th><th>Rate (40%)</th><th>Tips (Gratuity)</th></tr>
-        </thead>
+        <thead><tr><th>Date</th><th>Van</th><th>Rate (40%)</th><th>Tips (Gratuity)</th></tr></thead>
         <tbody>
           ${Object.entries(groups).map(([vehicle, vTrips]) => {
-            const vp   = vTrips.reduce((s,t) => s + t.vPay, 0);
-            const p40  = vp * 0.40;
+            const vp = vTrips.reduce((s,t) => s + t.vPay, 0);
+            const p40 = vp * 0.40;
             const grat = vTrips.reduce((s,t) => s + t.gratuity, 0);
-            return `<tr>
-              <td>${date}</td>
-              <td>${vehicle}</td>
-              <td>${fmtN(p40)}</td>
-              <td>${fmtN(grat)}</td>
-            </tr>`;
+            return `<tr><td>${date}</td><td>${vehicle}</td><td>${fmtN(p40)}</td><td>${fmtN(grat)}</td></tr>`;
           }).join('')}
         </tbody>
       </table>
     </div>
     <div style="font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--muted);margin-top:8px">
-      Click copy, then paste directly into your Excel spreadsheet (Ctrl+V)
+      Highlight the table above and copy, or click the button — paste directly into Excel
     </div>
   </div>`;
 
   resultsDiv.innerHTML = html;
   downloadBtn.style.display = 'inline-flex';
-
-  // Wire up copy button
   document.getElementById('excelCopyBtn').addEventListener('click', function() {
     copyToClipboard(buildExcelText(date, groups), this);
   });
 }
 
-// ─── History rendering ────────────────────────────────────────────────────────
-function renderHistory() {
+// ── By-Date History ──────────────────────────────────────────────────────────
+function renderDateHistory() {
   const history = loadHistory();
   if (!history.length) {
-    historyList.innerHTML = `<div class="empty-history">No saved calculations yet — run a calculation to save it here.</div>`;
+    historyList.innerHTML = `<div class="empty-state">No saved calculations yet — run a calculation to save it here.</div>`;
     return;
   }
-
   historyList.innerHTML = history.slice().reverse().map((entry, idx) => {
     const realIdx = history.length - 1 - idx;
     const vanRows = Object.entries(entry.groups).map(([vehicle, data]) => `
@@ -734,17 +671,16 @@ function renderHistory() {
           <div class="history-num"><div class="hl">Payout</div><div class="hv" style="color:${data.color}">${fmt(data.totalOut)}</div></div>
         </div>
       </div>`).join('');
-
     return `
     <div class="history-entry">
-      <div class="history-entry-header" onclick="toggleHistory(this)">
+      <div class="history-entry-header" onclick="toggleCollapse(this)">
         <div>
           <div class="history-date">📅 ${entry.date}</div>
           <div class="history-meta">${Object.keys(entry.groups).length} van(s) · saved ${entry.savedAt}</div>
         </div>
         <div class="history-actions">
-          <button class="copy-btn" onclick="event.stopPropagation();copyHistoryEntry(${realIdx},this)">📋 Copy for Excel</button>
-          <button class="btn danger" style="padding:6px 14px;font-size:0.75rem" onclick="event.stopPropagation();deleteHistoryEntry(${realIdx})">✕</button>
+          <button class="copy-btn" onclick="event.stopPropagation();copyDateEntry(${realIdx},this)">📋 Copy for Excel</button>
+          <button class="btn danger" style="padding:6px 14px;font-size:0.75rem" onclick="event.stopPropagation();deleteDateEntry(${realIdx})">✕</button>
           <span class="chevron">▼</span>
         </div>
       </div>
@@ -753,104 +689,175 @@ function renderHistory() {
   }).join('');
 }
 
-function toggleHistory(header) {
+// ── Per-Van Ledger ───────────────────────────────────────────────────────────
+function renderVanLedger() {
+  const history = loadHistory();
+
+  // Collect all unique vans across all history entries
+  const vanMap = {}; // vehicle -> [{date, total40, totalGrat, totalOut, totalVP}]
+  for (const entry of history) {
+    for (const [vehicle, data] of Object.entries(entry.groups)) {
+      if (!vanMap[vehicle]) vanMap[vehicle] = [];
+      vanMap[vehicle].push({ date: entry.date, ...data });
+    }
+  }
+
+  const allVans = Object.keys(vanMap).sort();
+
+  // Remove old van tabs (keep "By Date" tab)
+  const existingVanTabs = tabBar.querySelectorAll('[data-tab^="van-"]');
+  existingVanTabs.forEach(t => t.remove());
+  vanPanels.innerHTML = '';
+
+  if (!allVans.length) {
+    // No data yet — show placeholder under the van ledger if that tab is active
+    return;
+  }
+
+  allVans.forEach((vehicle, vi) => {
+    const color   = COLORS[vi % COLORS.length];
+    const entries = vanMap[vehicle].slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+
+    // Grand totals for this van
+    const grandPayout = entries.reduce((s, e) => s + e.totalOut, 0);
+    const grand40     = entries.reduce((s, e) => s + e.total40, 0);
+    const grandGrat   = entries.reduce((s, e) => s + e.totalGrat, 0);
+
+    // Add tab
+    const tab = document.createElement('div');
+    tab.className = 'tab';
+    tab.dataset.tab = `van-${vehicle}`;
+    tab.textContent = vehicle;
+    tab.style.color = color;
+    tab.addEventListener('click', () => switchTab(`van-${vehicle}`));
+    tabBar.appendChild(tab);
+
+    // Build panel
+    const panel = document.createElement('div');
+    panel.className = 'tab-panel';
+    panel.id = `panel-van-${vehicle}`;
+
+    const rows = entries.map(e => `
+      <div class="van-ledger-row">
+        <div class="van-ledger-date">📅 ${e.date}</div>
+        <div class="van-ledger-nums">
+          <div class="van-ledger-num"><div class="nl">Vehicle Pay</div><div class="nv">${fmt(e.totalVP)}</div></div>
+          <div class="van-ledger-num"><div class="nl">40% Pay</div><div class="nv" style="color:${color}">${fmt(e.total40)}</div></div>
+          <div class="van-ledger-num"><div class="nl">Gratuity</div><div class="nv" style="color:var(--accent3)">${fmt(e.totalGrat)}</div></div>
+          <div class="van-ledger-num"><div class="nl">Payout</div><div class="nv" style="color:${color};font-weight:800">${fmt(e.totalOut)}</div></div>
+        </div>
+      </div>`).join('');
+
+    panel.innerHTML = `
+      <div class="van-ledger-card">
+        <div class="van-ledger-header">
+          <div class="van-ledger-id" style="color:${color}">${vehicle}</div>
+          <div class="van-ledger-total">
+            <div class="tl">Total Earned (all dates)</div>
+            <div class="tv" style="color:${color}">${fmt(grandPayout)}</div>
+          </div>
+        </div>
+        <div class="van-ledger-body">${rows}</div>
+        <div class="van-ledger-summary">
+          <div><div class="sl">Total 40% Pay</div><div class="sv" style="color:${color}">${fmt(grand40)}</div></div>
+          <div><div class="sl">Total Gratuity</div><div class="sv" style="color:var(--accent3)">${fmt(grandGrat)}</div></div>
+          <div><div class="sl">Total Payout</div><div class="sv" style="color:${color};font-size:1.1rem">${fmt(grandPayout)}</div></div>
+        </div>
+      </div>`;
+
+    vanPanels.appendChild(panel);
+  });
+}
+
+function renderAllHistory() {
+  renderDateHistory();
+  renderVanLedger();
+}
+
+// ── Tabs ─────────────────────────────────────────────────────────────────────
+function switchTab(tabId) {
+  tabBar.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tabId));
+  document.getElementById('panel-by-date').classList.toggle('active', tabId === 'by-date');
+  vanPanels.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === `panel-${tabId}`));
+}
+document.querySelector('[data-tab="by-date"]').addEventListener('click', () => switchTab('by-date'));
+
+// ── Collapse ─────────────────────────────────────────────────────────────────
+function toggleCollapse(header) {
   const body    = header.nextElementSibling;
   const chevron = header.querySelector('.chevron');
   body.classList.toggle('open');
   chevron.classList.toggle('open');
 }
 
-function copyHistoryEntry(idx, btn) {
-  const history = loadHistory();
-  const entry   = history[idx];
-  // Rebuild groups in text form for Excel
-  const rows = [['Date', 'Van', 'Rate', 'Tips']];
+// ── History actions ───────────────────────────────────────────────────────────
+function copyDateEntry(idx, btn) {
+  const entry = loadHistory()[idx];
+  const rows  = [['Date', 'Van', 'Rate', 'Tips']];
   for (const [vehicle, data] of Object.entries(entry.groups)) {
     rows.push([entry.date, vehicle, fmtN(data.total40), fmtN(data.totalGrat)]);
   }
-  const text = rows.map(r => r.join('\t')).join('\n');
-  copyToClipboard(text, btn);
+  copyToClipboard(rows.map(r => r.join('\t')).join('\n'), btn);
 }
 
-function deleteHistoryEntry(idx) {
-  const history = loadHistory();
-  history.splice(idx, 1);
-  saveHistory(history);
-  renderHistory();
+function deleteDateEntry(idx) {
+  const h = loadHistory();
+  h.splice(idx, 1);
+  saveHistory(h);
+  renderAllHistory();
 }
 
 clearHistBtn.addEventListener('click', () => {
-  if (confirm('Clear all saved history?')) {
-    saveHistory([]);
-    renderHistory();
-  }
+  if (confirm('Clear all saved history?')) { saveHistory([]); renderAllHistory(); }
 });
 
-// ─── Save to history ──────────────────────────────────────────────────────────
+// ── Save to history ───────────────────────────────────────────────────────────
 function saveToHistory(date, groups) {
-  const history = loadHistory();
-  const colors  = ['#4fffb0', '#00c4ff', '#ffd166', '#ff6b6b', '#c77dff'];
-  let ci = 0;
-
+  const history  = loadHistory();
   const groupData = {};
+  let ci = 0;
   for (const [vehicle, vTrips] of Object.entries(groups)) {
     const totalVP   = vTrips.reduce((s,t) => s + t.vPay, 0);
     const total40   = totalVP * 0.40;
     const totalGrat = vTrips.reduce((s,t) => s + t.gratuity, 0);
     const totalOut  = total40 + totalGrat;
-    groupData[vehicle] = { totalVP, total40, totalGrat, totalOut, color: colors[ci++ % colors.length] };
+    groupData[vehicle] = { totalVP, total40, totalGrat, totalOut, color: COLORS[ci++ % COLORS.length] };
   }
-
-  // Replace if same date exists
   const existing = history.findIndex(h => h.date === date);
-  const entry = {
-    date,
-    groups: groupData,
-    savedAt: new Date().toLocaleString()
-  };
-  if (existing >= 0) history[existing] = entry;
-  else history.push(entry);
-
+  const entry = { date, groups: groupData, savedAt: new Date().toLocaleString() };
+  if (existing >= 0) history[existing] = entry; else history.push(entry);
   saveHistory(history);
-  renderHistory();
+  renderAllHistory();
 }
 
-// ─── Main events ──────────────────────────────────────────────────────────────
+// ── Main ─────────────────────────────────────────────────────────────────────
 resetBtn.addEventListener('click', () => {
   pasteInput.value = '';
   resultsDiv.innerHTML = '';
   errorBox.style.display = 'none';
   downloadBtn.style.display = 'none';
-  lastDate = ''; lastGroups = null;
+  lastDate = '';
 });
 
 calcBtn.addEventListener('click', () => {
   const raw = pasteInput.value.trim();
   if (!raw) { showError('Please paste your dispatch data first.'); return; }
-
   errorBox.style.display = 'none';
-  resultsDiv.innerHTML   = '';
+  resultsDiv.innerHTML = '';
   downloadBtn.style.display = 'none';
-
   const trips = parseTrips(raw);
-  if (!trips.length) {
-    showError('Could not find any trip data. Make sure you copied the full table.');
-    return;
-  }
-
+  if (!trips.length) { showError('Could not find any trip data. Make sure you copied the full table.'); return; }
   lastDate = trips[0].tripDate.match(/^\d{1,2}\/\d{1,2}\/\d{2,4}/)?.[0] || '';
   renderResults(trips, lastDate);
   saveToHistory(lastDate, groupTrips(trips));
 });
 
-// ─── Download ─────────────────────────────────────────────────────────────────
+// ── Download ─────────────────────────────────────────────────────────────────
 downloadBtn.addEventListener('click', () => {
   const content  = resultsDiv.innerHTML;
   if (!content) return;
   const dateSlug = lastDate ? lastDate.replace(/\//g, '-') : 'report';
-
-  const html = `<!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Van Pay Report – ${lastDate}</title>
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Van Pay Report – ${lastDate}</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 body{background:#0d0f14;color:#e8eaf2;font-family:'Syne',sans-serif;padding:40px 20px;}
@@ -863,29 +870,21 @@ body{background:#0d0f14;color:#e8eaf2;font-family:'Syne',sans-serif;padding:40px
 .vehicle-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#161a24;border-bottom:1px solid #2a3045;flex-wrap:wrap;gap:12px;}
 .vehicle-name{font-size:1.4rem;font-weight:800;font-family:'DM Mono',monospace;}
 .vehicle-summary{display:flex;gap:20px;flex-wrap:wrap;}
-.summary-chip{text-align:right;}
-.summary-chip .label{font-size:0.65rem;font-family:'DM Mono',monospace;color:#6b7599;text-transform:uppercase;}
-.summary-chip .value{font-size:1.1rem;font-weight:700;}
+.summary-chip{text-align:right;}.summary-chip .label{font-size:0.65rem;font-family:'DM Mono',monospace;color:#6b7599;text-transform:uppercase;}.summary-chip .value{font-size:1.1rem;font-weight:700;}
 table{width:100%;border-collapse:collapse;font-size:0.85rem;}
 thead th{padding:10px 16px;text-align:left;font-family:'DM Mono',monospace;font-size:0.7rem;text-transform:uppercase;color:#6b7599;background:rgba(255,255,255,0.02);border-bottom:1px solid #2a3045;}
-tbody tr{border-bottom:1px solid rgba(255,255,255,0.04);}
-tbody td{padding:12px 16px;font-family:'DM Mono',monospace;color:#e8eaf2;}
+tbody tr{border-bottom:1px solid rgba(255,255,255,0.04);}tbody td{padding:12px 16px;font-family:'DM Mono',monospace;color:#e8eaf2;}
 td.money{text-align:right;}td.green{color:#4fffb0;font-weight:500;}td.yellow{color:#ffd166;font-weight:600;}
 tfoot td{padding:12px 16px;font-family:'DM Mono',monospace;font-weight:600;background:rgba(79,255,176,0.05);border-top:1px solid #2a3045;text-align:right;}
 tfoot td:first-child{text-align:left;color:#6b7599;text-transform:uppercase;font-size:0.7rem;font-weight:400;}
 .global-totals{background:#161a24;border:1px solid rgba(79,255,176,0.2);border-radius:12px;padding:28px;margin-top:8px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;max-width:960px;margin-left:auto;margin-right:auto;}
-.global-totals .chip{text-align:center;}
-.global-totals .chip .label{font-family:'DM Mono',monospace;font-size:0.7rem;text-transform:uppercase;color:#6b7599;margin-bottom:6px;}
-.global-totals .chip .val{font-size:1.9rem;font-weight:800;color:#4fffb0;}
+.global-totals .chip{text-align:center;}.global-totals .chip .label{font-family:'DM Mono',monospace;font-size:0.7rem;text-transform:uppercase;color:#6b7599;margin-bottom:6px;}.global-totals .chip .val{font-size:1.9rem;font-weight:800;color:#4fffb0;}
 h1{text-align:center;font-size:2rem;font-weight:800;background:linear-gradient(135deg,#4fffb0,#00c4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
 .subtitle{text-align:center;color:#6b7599;font-family:'DM Mono',monospace;font-size:0.8rem;margin-bottom:40px;}
 .excel-box{display:none;}
 </style></head><body>
-<h1>Van Pay Report</h1>
-<p class="subtitle">Generated ${new Date().toLocaleString()}</p>
-${content}
-</body></html>`;
-
+<h1>Van Pay Report</h1><p class="subtitle">Generated ${new Date().toLocaleString()}</p>
+${content}</body></html>`;
   const blob = new Blob([html], { type: 'text/html' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
@@ -893,9 +892,8 @@ ${content}
   URL.revokeObjectURL(url);
 });
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
-renderHistory();
+// ── Init ─────────────────────────────────────────────────────────────────────
+renderAllHistory();
 </script>
 </body>
 </html>
-
